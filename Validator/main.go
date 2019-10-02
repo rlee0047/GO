@@ -8,8 +8,8 @@ import (
 
 type uSer struct {
 	ID        string `validate:"omitempty,uuid"`
-	Firstname string `validate:"omitempty"`
-	Lastname  string `validate:"omitempty"`
+	Firstname string `validate:"omitempty"` //Ether omitempty or required
+	Lastname  string `validate:"omitempty"` //Ether omitempty or required
 	Username  string `validate:"required,email"`
 	Password  string `validate:"required,gte=10"`
 	Type      string `validate:"isdefault"`
