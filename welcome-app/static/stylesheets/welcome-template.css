@@ -11,6 +11,12 @@ body  {
    color: aliceblue;
 }
 
+.day {
+   font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+   font-size: 3rem;
+   color: aliceblue;
+}
+
 .center {
    height: 100vh;
     display: flex;

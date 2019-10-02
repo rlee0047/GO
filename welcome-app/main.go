@@ -17,15 +17,23 @@ const custName = "Ryan Lee"
 
 //Create a struct that holds information to be displayed in our HTML file
 type Welcome struct {
-	Name string
 	Time string
+}
+
+type Day struct {
+	Name string
 }
 
 //Go application entrypoint
 func main() {
+
+	//curDate := time.Date
+
 	//Instantiate a Welcome struct object and pass in some random information.
 	//We shall get the name of the user as a query parameter from the URL
-	welcome := Welcome{custName, time.Now().Format(time.Stamp)}
+
+	day := Day{custName}
+	welcome := Welcome{time.Now().Format(time.Stamp)}
 
 	//We tell Go exactly where we can find our html file. We ask Go to parse the html file (Notice
 	// the relative path). We wrap it in a call to template.Must() which handles any errors and halts if there are fatal errors
@@ -48,7 +56,7 @@ func main() {
 
 		//Takes the name from the URL query e.g ?name=Martin, will set welcome.Name = Martin.
 		if name := r.FormValue("name"); name != "" {
-			welcome.Name = name
+			day.Name = name
 		}
 		//If errors show an internal server error message
 		//I also pass the welcome struct to the welcome-template.html file.
